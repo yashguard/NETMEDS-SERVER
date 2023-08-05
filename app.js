@@ -4,7 +4,7 @@ const dotenv = require("dotenv");
 const server = express();
 dotenv.config({ path: "./config.env" });
 const port = process.env.PORT;
-const User = require("./model/userSchema")
+const User = require("./model/userSchema");
 server.use(express.json());
 server.use(cors());
 server.use(require("./router/auth"));
@@ -21,10 +21,10 @@ server.get("/", middleware, (req, res) => {
 
 server.get("/users", async (req, res) => {
   try {
-    const allUsers = await User.find({})
+    const allUsers = await User.find({});
     res.status(200).send(allUsers);
   } catch (err) {
-    console.log(err)
+    console.log(err);
   }
 });
 
