@@ -7,7 +7,7 @@ dotenv.config({ path: "./config.env" });
 const db = process.env.DATABASE;
 const User = require("../model/userSchema");
 mongoose
-  .connect(db)
+  .connect("mongodb+srv://yashguard02:AR9Sr3gR6ohElrgm@cluster0.0hvmtfh.mongodb.net/NETMEDS")
   .then(() => {
     console.log("Connection successful");
   })
